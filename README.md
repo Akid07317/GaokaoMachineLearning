@@ -26,6 +26,7 @@
 3. 把 2024、2025 官方原始文件放入 `raw_data/2024/`、`raw_data/2025/`。
 4. 按 `templates/*_template.csv` 建立清洗后 CSV。
 5. 用 `scripts/data_cleaning.py` 和 `scripts/baseline_model.py` 逐步实现 2024 预测 2025 的回测。
+6. 查看 [server_setup.md](docs/server_setup.md) 了解服务器初始化、SSH、防火墙、Docker 和代码同步状态。
 
 ## 数据原则
 
