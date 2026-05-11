@@ -1,0 +1,35 @@
+.DS_Store
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.venv/
+venv/
+
+# Keep directory skeletons, but do not commit raw/private/generated data by default.
+raw_data/**
+!raw_data/**/
+!raw_data/**/.gitkeep
+clean_data/**
+!clean_data/**/
+!clean_data/**/.gitkeep
+outputs/**
+!outputs/**/
+!outputs/**/.gitkeep
+reports/**
+!reports/**/
+!reports/**/.gitkeep
+!reports/*.md
+notebooks/**
+!notebooks/**/
+!notebooks/**/.gitkeep
+
+# Local spreadsheets and exports can be large or private.
+*.xlsx
+*.xls
+*.pdf
+*.html
+*.png
+*.jpg
+*.jpeg

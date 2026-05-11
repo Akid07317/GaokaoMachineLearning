@@ -1,0 +1,52 @@
+project:
+  province: 广西
+  batch: 本科普通批
+  subject_type: 物理类
+  candidate_subject_combo: 物化生
+
+data_policy:
+  score_rank_method: conservative_end
+  official_sources_first: true
+  first_round_only: true
+  exclude_special_types_from_main_model: true
+
+special_types:
+  - 中外合作
+  - 民族班
+  - 预科
+  - 国家专项
+  - 地方专项
+  - 高校专项
+  - 定向
+  - 免费医学生
+  - 征集志愿
+
+preference:
+  target_score_range: [550, 620]
+  prefer_university_levels:
+    - 985
+    - 211
+    - 双一流
+    - 强双非
+  preferred_majors:
+    - 计算机
+    - 软件工程
+    - 人工智能
+    - 电子信息
+    - 自动化
+    - 通信
+    - 数学
+    - 物理
+    - 工科
+  cautious_or_forbidden_majors:
+    - 护理
+    - 农林
+    - 矿业
+    - 地质
+    - 土木
+    - 材料
+    - 化工
+    - 环境
+    - 生物
+    - 食品
+    - 海洋

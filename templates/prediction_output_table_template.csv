@@ -1,0 +1,1 @@
+year,candidate_rank,group_id,university_name,group_code,pred_rank_q10,pred_rank_q50,pred_rank_q90,admit_prob_low,admit_prob_high,risk_level,explanation,recommend_action,data_status
