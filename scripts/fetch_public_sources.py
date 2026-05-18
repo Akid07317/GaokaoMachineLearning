@@ -46,6 +46,11 @@ def build_parser() -> argparse.ArgumentParser:
         default=20,
         help="Per-request timeout in seconds.",
     )
+    parser.add_argument(
+        "--insecure",
+        action="store_true",
+        help="Disable SSL certificate verification for requests.",
+    )
     return parser
 
 
@@ -56,7 +61,15 @@ def main() -> None:
         wanted = set(args.source_id)
         sources = [source for source in sources if source["source_id"] in wanted]
 
-    results = [fetch_source(source, args.output_dir, timeout=args.timeout) for source in sources]
+    results = [
+        fetch_source(
+            source,
+            args.output_dir,
+            timeout=args.timeout,
+            verify_ssl=not args.insecure,
+        )
+        for source in sources
+    ]
     write_fetch_log(results, args.log_path)
 
     success = sum(result.status == "ok" for result in results)

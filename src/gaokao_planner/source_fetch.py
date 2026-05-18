@@ -8,6 +8,7 @@ from urllib.error import HTTPError, URLError
 from urllib.request import Request, urlopen
 
 import csv
+import json
 import ssl
 
 
@@ -47,8 +48,43 @@ def detect_antibot_shell(content: bytes) -> bool:
     return all(marker in text for marker in markers[:2]) or markers[2] in text
 
 
-def fetch_url(url: str, timeout: int = 20, verify_ssl: bool = True) -> bytes:
-    request = Request(url, headers={"User-Agent": USER_AGENT})
+def build_headers(
+    cookie_header: str = "",
+    extra_headers: dict[str, str] | None = None,
+) -> dict[str, str]:
+    headers = {
+        "User-Agent": USER_AGENT,
+        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+        "Accept-Language": "zh-CN,zh;q=0.9,en;q=0.8",
+        "Cache-Control": "no-cache",
+        "Pragma": "no-cache",
+    }
+    if cookie_header:
+        headers["Cookie"] = cookie_header.strip()
+    if extra_headers:
+        headers.update({key: value for key, value in extra_headers.items() if value})
+    return headers
+
+
+def load_json_headers(path: str | Path) -> dict[str, str]:
+    with Path(path).open("r", encoding="utf-8") as file:
+        data = json.load(file)
+    if not isinstance(data, dict):
+        raise ValueError("Header JSON must be an object of string keys and values.")
+    return {str(key): str(value) for key, value in data.items()}
+
+
+def load_text_file(path: str | Path) -> str:
+    return Path(path).read_text(encoding="utf-8").strip()
+
+
+def fetch_url(
+    url: str,
+    timeout: int = 20,
+    verify_ssl: bool = True,
+    headers: dict[str, str] | None = None,
+) -> bytes:
+    request = Request(url, headers=headers or build_headers())
     context = None
     if not verify_ssl:
         context = ssl._create_unverified_context()
@@ -60,6 +96,8 @@ def fetch_source(
     source: dict[str, str],
     output_dir: str | Path,
     timeout: int = 20,
+    headers: dict[str, str] | None = None,
+    verify_ssl: bool = True,
 ) -> FetchResult:
     source_id = source["source_id"]
     url = source["primary_url"]
@@ -70,7 +108,12 @@ def fetch_source(
     ensure_parent(output_path)
 
     try:
-        content = fetch_url(url, timeout=timeout, verify_ssl=True)
+        content = fetch_url(
+            url,
+            timeout=timeout,
+            verify_ssl=verify_ssl,
+            headers=headers or build_headers(),
+        )
         if detect_antibot_shell(content):
             output_path.write_bytes(content)
             return FetchResult(
@@ -163,3 +206,85 @@ def write_fetch_log(results: Iterable[FetchResult], path: str | Path) -> None:
         writer.writeheader()
         for result in results:
             writer.writerow(result.__dict__)
+
+
+def fetch_single_url(
+    url: str,
+    output_path: str | Path,
+    timeout: int = 20,
+    verify_ssl: bool = True,
+    cookie_header: str = "",
+    extra_headers: dict[str, str] | None = None,
+    source_id: str = "manual_session_fetch",
+) -> FetchResult:
+    target = Path(output_path)
+    ensure_parent(target)
+    fetched_at = datetime.now(timezone.utc).isoformat()
+    headers = build_headers(cookie_header=cookie_header, extra_headers=extra_headers)
+
+    try:
+        content = fetch_url(url, timeout=timeout, verify_ssl=verify_ssl, headers=headers)
+        target.write_bytes(content)
+        status = "blocked_antibot_html" if detect_antibot_shell(content) else "ok"
+        message = ""
+        if status != "ok":
+            message = "Downloaded anti-bot shell instead of source content."
+        return FetchResult(
+            source_id=source_id,
+            url=url,
+            status=status,
+            output_path=str(target),
+            bytes_written=len(content),
+            error_message=message,
+            fetched_at=fetched_at,
+        )
+    except HTTPError as error:
+        return FetchResult(
+            source_id=source_id,
+            url=url,
+            status="http_error",
+            output_path=str(target),
+            bytes_written=0,
+            error_message=f"{error.code} {error.reason}",
+            fetched_at=fetched_at,
+        )
+    except URLError as error:
+        return FetchResult(
+            source_id=source_id,
+            url=url,
+            status="url_error",
+            output_path=str(target),
+            bytes_written=0,
+            error_message=str(error.reason),
+            fetched_at=fetched_at,
+        )
+    except ssl.SSLError as error:
+        return FetchResult(
+            source_id=source_id,
+            url=url,
+            status="ssl_error",
+            output_path=str(target),
+            bytes_written=0,
+            error_message=str(error),
+            fetched_at=fetched_at,
+        )
+    except TimeoutError as error:
+        return FetchResult(
+            source_id=source_id,
+            url=url,
+            status="timeout",
+            output_path=str(target),
+            bytes_written=0,
+            error_message=str(error),
+            fetched_at=fetched_at,
+        )
+    except Exception as error:  # pragma: no cover
+        return FetchResult(
+            source_id=source_id,
+            url=url,
+            status="error",
+            output_path=str(target),
+            bytes_written=0,
+            error_message=str(error),
+            fetched_at=fetched_at,
+        )

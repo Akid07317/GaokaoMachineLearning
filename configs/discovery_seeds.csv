@@ -1,0 +1,10 @@
+seed_id,seed_url,source_name,year_hint,allowed_domains,include_keywords,follow_keywords,max_depth,max_pages,notes
+gxeea_public_root,https://www.gxeea.cn/,广西招生考试院,2024-2026,gxeea.cn,广西|物理|本科普通批|专业组|投档|一分一档|招生计划|招生章程|录取,招生|计划|专业|分数|录取|章程|广西|物理,2,30,广撒网官方主站；适合继续发现投档线、一分一档和政策页。
+gx_yangguang_portal,https://zyfz.gxeea.cn/,广西阳光志愿信息服务系统,2024-2026,zyfz.gxeea.cn,广西|招生计划|选院校|选专业|一位一档|历年录取|投档分数,招生|计划|专业|录取|一位一档|历年,2,25,系统公开入口；登录后还可进一步抓系统内页。
+chsi_score_index,https://gaokao.chsi.com.cn/gkxx/zc/ss/,阳光高考一分一档索引,2024-2026,gaokao.chsi.com.cn,广西|一分一档|物理|招生章程|录取|志愿,广西|一分一档|章程|录取,1,15,可能会遇到 412，先保留为自动化种子。
+bupt_official,https://zsb.bupt.edu.cn/,北京邮电大学本科招生网,2024-2026,zsb.bupt.edu.cn,广西|招生计划|历年分数|招生章程|专业介绍|电子信息|计算机|人工智能|自动化,招生计划|历年分数|招生政策|专业介绍|广西,2,35,高价值目标院校；适合自动抓计划、分数、章程和专业介绍页。
+xidian_official,https://zsb.xidian.edu.cn/,西安电子科技大学本科招生网,2024-2026,zsb.xidian.edu.cn,广西|招生计划|历年分数|招生章程|电子信息|通信|计算机|人工智能,招生计划|历年分数|招生章程|专业|广西,2,35,高价值目标院校；电子信息和通信类强校。
+seu_official,https://zsb.seu.edu.cn/,东南大学本科招生网,2024-2026,zsb.seu.edu.cn,广西|招生计划|往年分数|招生章程|专业目录|电子信息|自动化|计算机,招生计划|往年分数|招生章程|专业目录|广西,2,35,高价值目标院校；适合抓专业目录与往年分数入口。
+hust_official,https://zsb.hust.edu.cn/,华中科技大学本科招生信息网,2024-2026,zsb.hust.edu.cn,广西|招生计划|历年分数|招生章程|电子信息|计算机|自动化|人工智能,招生计划|历年分数|招生章程|专业|广西,2,35,高价值目标院校；综合强校。
+hit_official,https://zsb.hit.edu.cn/,哈尔滨工业大学招生办,2024-2026,zsb.hit.edu.cn,广西|本科招生专业|招生章程|历年分数|计算机|电子通信|人工智能|自动化,招生专业|招生章程|历年分数|广西,2,35,高价值目标院校；多校区专业集群信息丰富。
+njust_official,https://zsb.njust.edu.cn/,南京理工大学本科招生信息网,2024-2026,zsb.njust.edu.cn,广西|招生计划|历年分数|招生政策|计算机|电子信息|自动化,招生计划|历年分数|招生政策|广西,2,30,强双非/211梯队补充来源。

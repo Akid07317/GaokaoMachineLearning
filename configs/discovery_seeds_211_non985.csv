@@ -1,0 +1,11 @@
+seed_id,seed_url,source_name,year_hint,allowed_domains,include_keywords,follow_keywords,max_depth,max_pages,notes
+bupt_official_211,https://zsb.bupt.edu.cn/,北京邮电大学本科招生网,2024-2026,zsb.bupt.edu.cn,广西|招生计划|历年分数|招生章程|专业介绍|电子信息|计算机|人工智能|自动化,招生计划|历年分数|招生政策|专业介绍|广西,2,35,211非985；高价值信息类目标院校。
+xidian_official_211,https://zsb.xidian.edu.cn/,西安电子科技大学本科招生网,2024-2026,zsb.xidian.edu.cn,广西|招生计划|历年分数|招生章程|电子信息|通信|计算机|人工智能,招生计划|历年分数|招生章程|专业|广西,2,35,211非985；高价值电子信息与通信强校。
+bjtu_official_211,https://zfc.bjtu.edu.cn/,北京交通大学招生与就业工作处,2024-2026,zfc.bjtu.edu.cn|bjtu.edu.cn,广西|招生资讯网|招生计划|历年分数|招生章程|交通|自动化|计算机|电子信息,招生资讯网|招生计划|历年分数|招生章程|广西,2,30,211非985；轨道交通与工科强校。
+nuaa_official_211,https://zs.nuaa.edu.cn/,南京航空航天大学招生网,2024-2026,zs.nuaa.edu.cn|nuaa.edu.cn,广西|招生计划|历年分数|招生章程|自动化|电子信息|计算机|人工智能,招生计划|历年分数|招生章程|专业|广西,2,35,211非985；工信部院校，工科方向高相关。
+heu_official_211,https://www.hrbeu.edu.cn/zsjy1.htm,哈尔滨工程大学招生就业,2024-2026,hrbeu.edu.cn|www.hrbeu.edu.cn,广西|本科生招生|招生计划|历年分数|招生章程|计算机|自动化|电子信息,本科生招生|招生计划|历年分数|招生章程|广西,2,25,211非985；船海核特色，工科方向补充目标。
+whut_official_211,https://zs.whut.edu.cn/,武汉理工大学本科招生网,2024-2026,zs.whut.edu.cn|whut.edu.cn,广西|招生计划|录取情况|招生章程|学院专业|自动化|计算机|电子信息,招生计划|录取情况|招生章程|学院专业|广西,2,35,211非985；工科综合强校。
+hfut_official_211,https://www.hfut.edu.cn/zsyjyc/,合肥工业大学招生与就业处,2024-2026,hfut.edu.cn|www.hfut.edu.cn,广西|本科招生|招生计划|历年分数|招生章程|计算机|人工智能|自动化|微电子,本科招生|招生计划|历年分数|招生章程|广西,2,30,211非985；工科与电子信息补充目标。
+ustb_official_211,https://zhaosheng.ustb.edu.cn/,北京科技大学本科招生网,2024-2026,zhaosheng.ustb.edu.cn|ustb.edu.cn,广西|招生计划|历年分数|招生章程|分省直通车|自动化|计算机|人工智能,招生计划|历年分数|招生章程|分省直通车|广西,2,35,211非985；北京地区工科强校。
+ecust_official_211,https://zsb.ecust.edu.cn/,华东理工大学本科招生网,2024-2026,zsb.ecust.edu.cn|ecust.edu.cn,广西|招生计划查询|历年分数查询|招生章程|分省信息|计算机|自动化|电子信息,招生计划|历年分数|招生章程|分省信息|广西,2,35,211非985；上海地区工科与理科补充目标。
+swjtu_official_211,https://infpub.swjtu.edu.cn/gksx/zsksxx/bkszs1.htm,西南交通大学本科生招生信息公开,2024-2026,infpub.swjtu.edu.cn|swjtu.edu.cn,广西|招生章程|招生计划|录取最低分|本科生招生|交通|自动化|计算机,招生章程|招生计划|录取最低分|广西,2,25,211非985；官方信息公开页直接包含计划与录取最低分入口。

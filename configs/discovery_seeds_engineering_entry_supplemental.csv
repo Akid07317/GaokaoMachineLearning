@@ -1,0 +1,6 @@
+seed_id,seed_url,source_name,year_hint,allowed_domains,include_keywords,follow_keywords,max_depth,max_pages,notes
+zhongguo_shiyou_beijing_211,http://bkzs.cup.edu.cn/f,中国石油大学北京,2024-2026,cup.edu.cn|bkzs.cup.edu.cn,本科招生|本科生招生|招生计划|历年分数|录取|招生章程|分省|专业,招生|计划|分数|录取|章程|广西|本科,2,14,工程池核心空白补抓_入口页深挖
+zhongguo_shiyou_huadong_211,https://www.upc.edu.cn/,中国石油大学华东,2024-2026,upc.edu.cn|zhaosheng.upc.edu.cn,本科招生|本科生招生|招生计划|历年分数|录取|招生章程|分省|专业,招生|计划|分数|录取|章程|广西|本科,2,14,工程池核心空白补抓_入口页深挖
+beijing_huagong_211,https://www.buct.edu.cn/zsjy_11437/list.htm,北京化工大学,2024-2026,buct.edu.cn|goto.buct.edu.cn|jiaowuchu.buct.edu.cn,本科招生|本科生招生|招生计划|历年分数|录取|招生章程|分省|专业,招生|计划|分数|录取|章程|广西|本科,2,14,工程池核心空白补抓_入口页深挖
+huabei_dianli_211,https://goto.ncepu.edu.cn/,华北电力大学,2024-2026,ncepu.edu.cn|goto.ncepu.edu.cn|zhaosheng.ncepu.edu.cn,本科招生|本科生招生|招生计划|历年分数|录取|招生章程|分省|专业,招生|计划|分数|录取|章程|广西|本科,2,14,工程池核心空白补抓_入口页深挖
+fuzhou_daxue_211,https://zsb.fzu.edu.cn/,福州大学,2024-2026,fzu.edu.cn|zsb.fzu.edu.cn|zsks.fzu.edu.cn,本科招生|本科生招生|招生计划|历年分数|录取|招生章程|分省|专业,招生|计划|分数|录取|章程|广西|本科,2,14,工程池核心空白补抓_入口页深挖

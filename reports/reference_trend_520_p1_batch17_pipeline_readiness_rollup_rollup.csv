@@ -1,0 +1,17 @@
+metric,value,notes
+input_decision_matrix_rows,10,clean_data/engineering_guangxi_seed/reference_trend_520_p1_batch17_gated_branch_decision_matrix.csv
+input_approval_option_rows,7,clean_data/engineering_guangxi_seed/reference_trend_520_p1_batch17_user_approval_decision_sheet.csv
+input_local_template_rows,15,clean_data/engineering_guangxi_seed/reference_trend_520_p1_batch17_local_checklist_review_templates.csv
+readiness_rows,8,One local bundle plus approval options.
+automation_can_proceed_now_rows,0,All lanes are waiting for artifact/approval.
+unique_lookup_scores_waiting,5,382|461|462|490|527
+covered_decision_family_rows,10,Matrix families represented and logged.
+reference_trend_pool_eligible_rows,0,Readiness rollup is not intake.
+calibration_eligible_rows,0,No rank selected.
+canonical_ml_entry_open,0,Canonical/ML remains closed.
+readiness_priority::P0,3,readiness row priority
+readiness_priority::P1,3,readiness row priority
+readiness_priority::P2_optional,1,readiness row priority
+readiness_priority::local_no_new_user_approval,1,readiness row priority
+source_type::approval_option,7,readiness source type
+source_type::local_template_bundle,1,readiness source type

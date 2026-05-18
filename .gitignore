@@ -11,6 +11,12 @@ venv/
 raw_data/**
 !raw_data/**/
 !raw_data/**/.gitkeep
+raw_sources/**
+!raw_sources/**/
+!raw_sources/**/.gitkeep
+**/raw_data/**
+!**/raw_data/**/
+!**/raw_data/**/.gitkeep
 clean_data/**
 !clean_data/**/
 !clean_data/**/.gitkeep
@@ -21,6 +27,10 @@ reports/**
 !reports/**/
 !reports/**/.gitkeep
 !reports/*.md
+**/reports/**
+!**/reports/**/
+!**/reports/**/.gitkeep
+!**/reports/*.md
 notebooks/**
 !notebooks/**/
 !notebooks/**/.gitkeep

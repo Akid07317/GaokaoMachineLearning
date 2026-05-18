@@ -167,6 +167,62 @@ git diff
 
 不要直接 `git reset --hard`，除非明确确认服务器上的改动都可以丢弃。
 
+## AstrBot QQ 小号机器人部署记录
+
+更新时间：2026-05-11 23:35 Asia/Shanghai
+
+部署目录：
+
+```bash
+/home/don/astrbot-qqbot
+```
+
+运行方式：
+
+```bash
+cd /home/don/astrbot-qqbot
+docker compose ps
+docker compose logs -f astrbot
+docker compose logs -f napcat
+docker compose restart
+docker compose down
+docker compose up -d
+```
+
+容器与镜像：
+
+```text
+astrbot: swr.cn-north-4.myhuaweicloud.com/ddn-k8s/docker.io/soulter/astrbot:v4.22.1
+napcat:  m.daocloud.io/docker.io/mlikiowa/napcat-docker:latest
+```
+
+端口绑定：
+
+```text
+AstrBot WebUI: 127.0.0.1:6185 -> container 6185
+NapCat WebUI:  127.0.0.1:6099 -> container 6099
+```
+
+说明：
+
+- 两个 WebUI 都只绑定在服务器本机 `127.0.0.1`，不要直接暴露公网。
+- 本地访问建议使用 SSH 隧道：
+
+```bash
+ssh -L 6185:127.0.0.1:6185 -L 6099:127.0.0.1:6099 don@101.132.168.144
+```
+
+- 隧道打开后，本机访问：
+
+```text
+AstrBot: http://127.0.0.1:6185
+NapCat:  http://127.0.0.1:6099/webui
+```
+
+- AstrBot 默认用户名和密码为 `astrbot` / `astrbot`，首次登录后应立即修改。
+- NapCat 首次启动会输出 WebUI token 和 QQ 扫码登录二维码。不要把 token、二维码链接、QQ 登录状态文件提交到仓库或聊天记录。
+- 2026-05-11 首次部署时，Docker Hub 直连和部分镜像代理拉取 AstrBot 较慢，最终使用华为云 SWR 同步镜像部署 AstrBot v4.22.1。
+
 ## 常用检查命令
 
 ```bash
@@ -218,4 +274,3 @@ API Key
 .env 生产配置
 真实考生个人信息
 ```
-

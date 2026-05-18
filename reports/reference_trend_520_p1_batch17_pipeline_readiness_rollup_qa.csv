@@ -1,0 +1,7 @@
+qa_check,status,details
+input_files_present,PASS,matrix=10 approval=7 templates=15
+readiness_scope,PASS,readiness_rows=8
+no_autonomous_execution_remaining,PASS,"Every lane waits for a local artifact, official raw artifact, or user approval."
+score_rank_wait_preserved,PASS,scores=382|461|462|490|527
+decision_families_represented,PASS,represented=10 matrix=10
+intake_canonical_ml_closed,PASS,"No readiness lane opens intake, calibration, canonical, or ML."
